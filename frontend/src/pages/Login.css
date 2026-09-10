@@ -1,0 +1,510 @@
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  background: white;
+}
+
+/* =========================================================
+   LEFT / COMPANY VISUAL
+========================================================= */
+
+.login-visual {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b1f3a, #155eef);
+  color: white;
+}
+
+.login-visual::before,
+.login-visual::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.login-visual::before {
+  width: 550px;
+  height: 550px;
+  right: -220px;
+  top: -180px;
+}
+
+.login-visual::after {
+  width: 700px;
+  height: 700px;
+  left: -350px;
+  bottom: -400px;
+}
+
+.login-visual-content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding: 46px 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.login-brand strong {
+  display: block;
+  font-size: 18px;
+}
+
+.login-brand span {
+  display: block;
+  font-size: 11px;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+.login-hero {
+  max-width: 600px;
+  margin: auto 0;
+}
+
+.login-hero .eyebrow {
+  color: #b9d3ff;
+}
+
+.login-hero h1 {
+  margin: 17px 0;
+  font-size: clamp(38px, 4vw, 62px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.login-hero h1 span {
+  color: #b9d3ff;
+}
+
+.login-hero p {
+  max-width: 530px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.login-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+}
+.company-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+.login-mobile-brand .company-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+/* =========================================================
+   LOGIN PANEL
+========================================================= */
+
+.login-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.login-card {
+  width: min(420px, 100%);
+}
+
+.login-mobile-brand {
+  display: none;
+}
+
+.login-card h2 {
+  margin: 8px 0 8px;
+  color: #172033;
+  font-size: 28px;
+  letter-spacing: -0.025em;
+}
+
+.login-card > .muted {
+  margin-bottom: 28px;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-card label {
+  color: #344054;
+  font-size: 12px;
+  font-weight: 650;
+  margin-top: 8px;
+}
+
+.input-icon {
+  height: 47px;
+  border: 1px solid #dfe3ea;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  color: #98a2b3;
+  transition: 0.2s;
+}
+
+.input-icon:focus-within {
+  border-color: #155eef;
+  box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.09);
+}
+
+.input-icon input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #344054;
+  font-size: 13px;
+}
+
+.input-icon button {
+  border: 0;
+  background: transparent;
+  color: #98a2b3;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.login-btn {
+  margin-top: 17px;
+  height: 47px;
+  border: 0;
+  border-radius: 9px;
+  background: #155eef;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: #0f4fd0;
+}
+
+.login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-footer {
+  margin-top: 30px;
+  text-align: center;
+  color: #98a2b3;
+  font-size: 11px;
+}
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 1024px) {
+  .login-page {
+    grid-template-columns: 1fr 0.85fr;
+  }
+
+  .login-visual-content {
+    padding: 40px 7%;
+  }
+
+  .login-brand strong {
+    font-size: 16px;
+  }
+
+  .login-hero h1 {
+    font-size: clamp(36px, 5vw, 52px);
+  }
+
+  .login-panel {
+    padding: 30px;
+  }
+}
+
+/* =========================================================
+   PHONES
+   COMPANY SECTION STAYS VISIBLE
+========================================================= */
+
+@media (max-width: 900px) {
+  .login-page {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* IMPORTANT:
+     DO NOT HIDE .login-visual ON MOBILE
+  */
+
+  .login-visual {
+    display: block;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .login-visual-content {
+    min-height: auto;
+    padding: 28px 24px;
+  }
+
+  .login-brand {
+    margin-bottom: 32px;
+  }
+
+  .login-brand strong {
+    font-size: 15px;
+  }
+
+  .login-brand span {
+    font-size: 10px;
+  }
+
+  .login-hero {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .login-hero .eyebrow {
+    font-size: 10px;
+  }
+
+  .login-hero h1 {
+    margin: 12px 0;
+    font-size: clamp(30px, 8vw, 44px);
+    line-height: 1.08;
+  }
+
+  .login-hero p {
+    max-width: 600px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .login-features {
+    margin-top: 22px;
+    gap: 9px 18px;
+    font-size: 11px;
+  }
+
+  /* LOGIN AREA BELOW COMPANY SECTION */
+
+  .login-panel {
+    width: 100%;
+    min-height: auto;
+    padding: 35px 20px;
+    box-sizing: border-box;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  /* We already have the company brand above */
+  .login-mobile-brand {
+    display: none;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 500px) {
+  .login-visual-content {
+    padding: 24px 18px;
+  }
+
+  .login-brand {
+    gap: 9px;
+    margin-bottom: 26px;
+  }
+
+  .login-brand strong {
+    font-size: 12px;
+  }
+
+  .login-brand span {
+    font-size: 9px;
+  }
+
+  .login-hero .eyebrow {
+    font-size: 9px;
+  }
+
+  .login-hero h1 {
+    font-size: 30px;
+    line-height: 1.08;
+    margin: 10px 0 14px;
+  }
+
+  .login-hero p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .login-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    margin-top: 18px;
+    font-size: 10px;
+  }
+
+  .login-panel {
+    width: 100%;
+    min-height: auto;
+    padding: 30px 16px;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .login-card h2 {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .login-card > .muted {
+    margin-bottom: 22px;
+  }
+
+  .input-icon {
+    height: 48px;
+  }
+
+  .login-btn {
+    height: 48px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+  .login-visual-content {
+    padding: 20px 14px;
+  }
+
+  .login-brand {
+    margin-bottom: 22px;
+  }
+
+  .login-brand strong {
+    font-size: 11px;
+  }
+
+  .login-brand span {
+    font-size: 8px;
+  }
+
+  .login-hero h1 {
+    font-size: 27px;
+  }
+
+  .login-hero p {
+    font-size: 11px;
+  }
+
+  .login-features {
+    font-size: 9px;
+  }
+
+  .login-panel {
+    padding: 25px 12px;
+  }
+
+  .login-card h2 {
+    font-size: 22px;
+  }
+
+  .login-card form {
+    gap: 6px;
+  }
+
+  .input-icon {
+    height: 46px;
+    padding: 0 11px;
+  }
+
+  .login-btn {
+    height: 46px;
+  }
+}
+
+/* =========================================================
+   LANDSCAPE / SHORT PHONES
+========================================================= */
+
+@media (max-height: 650px) and (max-width: 900px) {
+  .login-visual-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .login-brand {
+    margin-bottom: 18px;
+  }
+
+  .login-hero h1 {
+    margin: 8px 0;
+  }
+
+  .login-hero p {
+    margin-bottom: 8px;
+  }
+
+  .login-features {
+    margin-top: 12px;
+  }
+
+  .login-panel {
+    align-items: flex-start;
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .input-icon,
+  .login-btn {
+    transition: none;
+  }
+}

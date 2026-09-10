@@ -1,0 +1,156 @@
+.topbar {
+  height: 76px;
+  background: white;
+  border-bottom: 1px solid #e7eaf0;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.search-box {
+  width: min(560px, 100%);
+  height: 42px;
+  background: #f7f8fa;
+  border: 1px solid #e7eaf0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  color: #98a2b3;
+}
+
+.search-box input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #344054;
+  font-size: 13px;
+  min-width: 0;
+}
+
+.search-box input::placeholder {
+  color: #98a2b3;
+}
+
+.search-shortcut {
+  padding: 3px 7px;
+  border: 1px solid #dfe3e8;
+  border-radius: 5px;
+  color: #98a2b3;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.topbar-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.notification {
+  position: relative;
+}
+
+.notification i {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f04438;
+  right: 7px;
+  top: 7px;
+  border: 1px solid white;
+}
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-left: 12px;
+  border-left: 1px solid #e7eaf0;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e9f1ff;
+  color: #155eef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 750;
+  font-size: 13px;
+}
+
+.user-text {
+  min-width: 0;
+}
+
+.user-text strong {
+  display: block;
+  color: #344054;
+  font-size: 12px;
+  max-width: 140px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.user-text span {
+  display: block;
+  color: #98a2b3;
+  font-size: 10px;
+  max-width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    height: 68px;
+    padding: 0 18px;
+  }
+
+  .search-box {
+    flex: 1;
+  }
+
+  .user-text,
+  .user-chip > svg {
+    display: none;
+  }
+
+  .user-chip {
+    padding-left: 8px;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    gap: 8px;
+    padding: 0 12px;
+  }
+
+  .search-shortcut {
+    display: none;
+  }
+
+  .search-box {
+    height: 40px;
+  }
+
+  .notification {
+    display: none;
+  }
+}
